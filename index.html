@@ -53,12 +53,17 @@
         }
         
         <!-- For top navigation menu -->
-        .topnav {
+        
+.topnav {
   position: relative;
   overflow: hidden;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   background-color: #333;
+  padding: 10px;
 }
-
+        
 .topnav a {
   float: left;
   color: #f2f2f2;
@@ -89,7 +94,9 @@
 }
 
 .topnav-right {
+  display: flex;
   float: right;
+    justify-content: flex-end;
 }
 
 /* Responsive navigation menu (for mobile devices) */
@@ -97,6 +104,7 @@
   .topnav a, .topnav-right {
     float: none;
     display: block;
+      text-align: left;
   }
   
   .topnav-centered a {
