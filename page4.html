@@ -12,7 +12,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Neptune's Sentinels</title>
+    <title> Neptune's Sentinel </title>
     <link rel="stylesheet" href="styles.css">
   
   <style>
@@ -20,7 +20,6 @@
       text-align: center;
     }
 
-    
     .topnav a {
   float: left;
   color: #f2f2f2;
@@ -89,15 +88,737 @@
 </div>
 
   
-  <h1> About Us</h1>
-  <h3 style="text-align: center;"> Our project's mission is to provide an opportunity for volunteers from all sorts of backgrounds to be able to coordinate and conduct activities for the preservation of ocean life and ecosystem. </h3>
+  <h1> Interactive World Map</h1>
+  <h5 style="text-align: center;"> A look at the world's species and their status. </h5>
 
-  <h3> Location: </h3>
-    <h2> Mainly based in Asia. </h2>
+<section>
+    <svg
+        xmlns:dc="http://purl.org/dc/elements/1.1/"
+        xmlns:cc="http://creativecommons.org/ns#"
+        xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    </svg>
+</section>
 
-  
-  
-
+    <div>
+        {
+  "settings": {
+    "editor": {
+      "themeTags": [
+        "dark"
+      ],
+      "userData": {
+        "projection": "geoMercator",
+        "geodata": "worldLow"
+      },
+      "polygonFill": {
+        "type": "Color",
+        "value": "#1d4190"
+      },
+      "polygonStroke": {
+        "type": "Color",
+        "value": "#b3adad"
+      },
+      "pointScale": 2.3,
+      "pointTypeKey": "Place",
+      "pointLabelText": "Galápagos Sea Lion",
+      "__parse": true
+    },
+    "editor.map": {
+      "minZoomLevel": 0.8,
+      "projection": "geoOrthographic",
+      "panX": "rotateX",
+      "zoomControl": {
+        "type": "ZoomControl",
+        "settings": {
+          "visible": true,
+          "position": "absolute",
+          "layout": {
+            "type": "VerticalLayout"
+          },
+          "themeTags": [
+            "zoomtools"
+          ],
+          "layer": 30
+        }
+      },
+      "background": {
+        "type": "Rectangle",
+        "settings": {
+          "fill": {
+            "type": "Color",
+            "value": "#1a1a1a"
+          },
+          "fillOpacity": 1,
+          "width": 1528,
+          "height": 800,
+          "x": 0,
+          "y": 0,
+          "fillPattern": {
+            "type": "GrainPattern",
+            "settings": {
+              "maxOpacity": 0.08,
+              "density": 0.2,
+              "colors": [
+                {
+                  "type": "Color",
+                  "value": "#aaaaaa"
+                }
+              ]
+            }
+          },
+          "isMeasured": false
+        }
+      },
+      "themeTags": [
+        "map"
+      ],
+      "translateX": 764,
+      "translateY": 400,
+      "panY": "rotateY",
+      "rotationX": 31.073166768840117,
+      "rotationY": -5.205174085957726,
+      "__parse": true,
+      "homeZoomLevel": 0
+    },
+    "editor.pointTemplate": {
+      "toggleKey": "active",
+      "centerX": {
+        "type": "Percent",
+        "value": 50
+      },
+      "centerY": {
+        "type": "Percent",
+        "value": 50
+      },
+      "tooltipText": "{name}",
+      "__parse": true
+    },
+    "editor.bubbleTemplate": {
+      "toggleKey": "active",
+      "tooltipText": "{name}: {value}",
+      "__parse": true
+    },
+    "editor.pixelTemplate": {
+      "tooltipText": "{name}",
+      "toggleKey": "active",
+      "__parse": true,
+      "userData": {
+        "point1": {
+          "longitude": -25.520409138238495,
+          "latitude": 32.676805101367684
+        },
+        "point2": {
+          "longitude": -23.65191870725286,
+          "latitude": 32.65863000848916
+        }
+      }
+    },
+    "editor.linePointTemplate": {
+      "toggleKey": "active",
+      "centerX": {
+        "type": "Percent",
+        "value": 50
+      },
+      "centerY": {
+        "type": "Percent",
+        "value": 50
+      },
+      "tooltipText": "{name}",
+      "__parse": true
+    },
+    "editor.labelTemplate": {
+      "toggleKey": "active",
+      "tooltipText": "{name}",
+      "__parse": true
+    },
+    "editor.polygonSeries": {
+      "valueField": "value",
+      "calculateAggregates": true,
+      "id": "polygonseries",
+      "exclude": [],
+      "geometryField": "geometry",
+      "geometryTypeField": "geometryType",
+      "idField": "id",
+      "__parse": true
+    },
+    "editor.lineSeries": {
+      "layer": 30,
+      "id": "lineseries",
+      "lineTypeField": "lineType",
+      "geometryField": "geometry",
+      "geometryTypeField": "geometryType",
+      "idField": "id",
+      "__parse": true
+    },
+    "editor.pointSeries": {
+      "fixedField": "fixed",
+      "id": "pointseries",
+      "geometryField": "geometry",
+      "geometryTypeField": "geometryType",
+      "idField": "id",
+      "__parse": true
+    },
+    "editor.labelSeries": {
+      "fixedField": "fixed",
+      "id": "labelseries",
+      "geometryField": "geometry",
+      "geometryTypeField": "geometryType",
+      "idField": "id",
+      "__parse": true
+    },
+    "editor.bubbleSeries": {
+      "calculateAggregates": true,
+      "valueField": "value",
+      "polygonIdField": "id",
+      "id": "bubbleseries",
+      "geometryField": "geometry",
+      "geometryTypeField": "geometryType",
+      "idField": "id",
+      "__parse": true
+    },
+    "editor.gridSeries": {
+      "themeTags": [
+        "grid"
+      ],
+      "affectsBounds": false,
+      "lineTypeField": "lineType",
+      "geometryField": "geometry",
+      "geometryTypeField": "geometryType",
+      "idField": "id",
+      "clipExtent": true,
+      "__parse": true
+    },
+    "editor.backgroundSeries": {
+      "visible": false,
+      "themeTags": [
+        "polygon",
+        "background"
+      ],
+      "affectsBounds": false,
+      "geometryField": "geometry",
+      "geometryTypeField": "geometryType",
+      "idField": "id",
+      "__parse": true
+    },
+    "editor.backgroundSeries.mapPolygons.template": {
+      "forceInactive": true,
+      "fill": {
+        "type": "Color",
+        "value": "#222222"
+      },
+      "stroke": {
+        "type": "Color",
+        "value": "#222222"
+      },
+      "__parse": true
+    },
+    "editor.gridSeries.mapLines.template": {
+      "forceInactive": true,
+      "stroke": {
+        "type": "Color",
+        "value": "#ffffff"
+      },
+      "strokeOpacity": 0.04,
+      "__parse": true
+    }
+  },
+  "data": {
+    "editor.polygonSeries": [],
+    "editor.lineSeries": [],
+    "editor.pointSeries": [
+      {
+        "fixed": false,
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            110.33601,
+            32.35775
+          ],
+          "__parse": false
+        },
+        "id": "point_1",
+        "name": "Point 1",
+        "settings": {
+          "type": "Template",
+          "settings": {
+            "fillOpacity": 0.7,
+            "fill": {
+              "type": "Color",
+              "value": "#e03f35"
+            },
+            "stroke": {
+              "type": "Color",
+              "value": "#000000"
+            },
+            "strokeOpacity": 0.5,
+            "scale": 0.7,
+            "strokeWidth": 0.5,
+            "x": {
+              "type": "Percent",
+              "value": 23.664921865413326
+            },
+            "y": {
+              "type": "Percent",
+              "value": 37
+            }
+          }
+        },
+        "pointType": "Picture",
+        "__parse": true
+      },
+      {
+        "fixed": false,
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            97.32799,
+            64.87948
+          ],
+          "__parse": false
+        },
+        "id": "point_2",
+        "name": "Point 2",
+        "settings": {
+          "type": "Template",
+          "settings": {
+            "fillOpacity": 0.7,
+            "fill": {
+              "type": "Color",
+              "value": "#e03f35"
+            },
+            "stroke": {
+              "type": "Color",
+              "value": "#000000"
+            },
+            "strokeOpacity": 0.5,
+            "scale": 0.7,
+            "strokeWidth": 0.5,
+            "x": {
+              "type": "Percent",
+              "value": 36.073299228208846
+            },
+            "y": {
+              "type": "Percent",
+              "value": 45.79999923706055
+            }
+          }
+        },
+        "pointType": "Picture",
+        "__parse": true
+      },
+      {
+        "fixed": false,
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            34.28835,
+            -32.37457
+          ],
+          "__parse": false
+        },
+        "id": "point_3",
+        "name": "Point 3",
+        "settings": {
+          "type": "Template",
+          "settings": {
+            "fillOpacity": 0.7,
+            "fill": {
+              "type": "Color",
+              "value": "#e03f35"
+            },
+            "stroke": {
+              "type": "Color",
+              "value": "#000000"
+            },
+            "strokeOpacity": 0.5,
+            "scale": 2.2,
+            "strokeWidth": 0.5,
+            "x": {
+              "type": "Percent",
+              "value": 48.638744254386864
+            },
+            "y": {
+              "type": "Percent",
+              "value": 63.700008392333984
+            }
+          }
+        },
+        "pointType": "Place",
+        "__parse": true
+      },
+      {
+        "fixed": false,
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            3.40824,
+            -2.84016
+          ],
+          "__parse": false
+        },
+        "id": "point_4",
+        "name": "Point 4",
+        "settings": {
+          "type": "Template",
+          "settings": {
+            "fillOpacity": 0.7,
+            "fill": {
+              "type": "Color",
+              "value": "#e03f35"
+            },
+            "stroke": {
+              "type": "Color",
+              "value": "#000000"
+            },
+            "strokeOpacity": 0.5,
+            "scale": 2.3,
+            "strokeWidth": 0.5,
+            "x": {
+              "type": "Percent",
+              "value": 35.18324846996686
+            },
+            "y": {
+              "type": "Percent",
+              "value": 40.60000228881836
+            }
+          }
+        },
+        "pointType": "Place",
+        "__parse": true
+      },
+      {
+        "fixed": false,
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            90.51127,
+            10.68908
+          ],
+          "__parse": false
+        },
+        "id": "point_5",
+        "name": "Point 5",
+        "settings": {
+          "type": "Template",
+          "settings": {
+            "fillOpacity": 0.7,
+            "fill": {
+              "type": "Color",
+              "value": "#e03f35"
+            },
+            "stroke": {
+              "type": "Color",
+              "value": "#000000"
+            },
+            "strokeOpacity": 0.5,
+            "scale": 2.3,
+            "strokeWidth": 0.5,
+            "x": {
+              "type": "Percent",
+              "value": 40.157070459495664
+            },
+            "y": {
+              "type": "Percent",
+              "value": 46.20000076293945
+            }
+          }
+        },
+        "pointType": "Place",
+        "__parse": true
+      },
+      {
+        "fixed": false,
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            112.91648,
+            10.55064
+          ],
+          "__parse": false
+        },
+        "id": "point_6",
+        "name": "Point 6",
+        "settings": {
+          "type": "Template",
+          "settings": {
+            "fillOpacity": 0.7,
+            "fill": {
+              "type": "Color",
+              "value": "#e03f35"
+            },
+            "stroke": {
+              "type": "Color",
+              "value": "#000000"
+            },
+            "strokeOpacity": 0.5,
+            "scale": 2.3,
+            "strokeWidth": 0.5,
+            "x": {
+              "type": "Percent",
+              "value": 47.32984373082665
+            },
+            "y": {
+              "type": "Percent",
+              "value": 43.70000076293945
+            }
+          }
+        },
+        "pointType": "Place",
+        "__parse": true
+      },
+      {
+        "fixed": false,
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -85.60633,
+            26.36181
+          ],
+          "__parse": false
+        },
+        "id": "point_7",
+        "name": "Kemp's Ridley Sea Turtle(P7)",
+        "settings": {
+          "type": "Template",
+          "settings": {
+            "fillOpacity": 0.7,
+            "fill": {
+              "type": "Color",
+              "value": "#e03f35"
+            },
+            "stroke": {
+              "type": "Color",
+              "value": "#000000"
+            },
+            "strokeOpacity": 0.5,
+            "scale": 2.3,
+            "strokeWidth": 0.5,
+            "x": {
+              "type": "Percent",
+              "value": 37.95811518324607
+            },
+            "y": {
+              "type": "Percent",
+              "value": 54
+            },
+            "name": "Kemp's Ridley Sea Turtle(P7)"
+          }
+        },
+        "pointType": "Place",
+        "__parse": true
+      },
+      {
+        "fixed": false,
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -51.35656,
+            45.25508
+          ],
+          "__parse": false
+        },
+        "id": "point_8",
+        "name": "North Atlantic Right Whale (P8)",
+        "settings": {
+          "type": "Template",
+          "settings": {
+            "fillOpacity": 0.7,
+            "fill": {
+              "type": "Color",
+              "value": "#e03f35"
+            },
+            "stroke": {
+              "type": "Color",
+              "value": "#000000"
+            },
+            "strokeOpacity": 0.5,
+            "scale": 2.3,
+            "strokeWidth": 0.5,
+            "x": {
+              "type": "Percent",
+              "value": 55.811517525717846
+            },
+            "y": {
+              "type": "Percent",
+              "value": 55.70000839233399
+            },
+            "name": "North Atlantic Right Whale (P8)"
+          }
+        },
+        "pointType": "Place",
+        "__parse": true
+      },
+      {
+        "fixed": false,
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -59.07001,
+            20.0209
+          ],
+          "__parse": false
+        },
+        "id": "point_9",
+        "name": "Hawksbill Turtle(P9)",
+        "settings": {
+          "type": "Template",
+          "settings": {
+            "fillOpacity": 0.7,
+            "fill": {
+              "type": "Color",
+              "value": "#e03f35"
+            },
+            "stroke": {
+              "type": "Color",
+              "value": "#000000"
+            },
+            "strokeOpacity": 0.5,
+            "scale": 2.3,
+            "strokeWidth": 0.5,
+            "x": {
+              "type": "Percent",
+              "value": 45.130892449024465
+            },
+            "y": {
+              "type": "Percent",
+              "value": 39.79999923706055
+            },
+            "name": "Hawksbill Turtle(P9)"
+          }
+        },
+        "pointType": "Place",
+        "__parse": true
+      },
+      {
+        "fixed": false,
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            26.85859,
+            35.30984
+          ],
+          "__parse": false
+        },
+        "id": "point_10",
+        "name": "Med. Monk Seal(P10)",
+        "settings": {
+          "type": "Template",
+          "settings": {
+            "fillOpacity": 0.7,
+            "fill": {
+              "type": "Color",
+              "value": "#e03f35"
+            },
+            "stroke": {
+              "type": "Color",
+              "value": "#000000"
+            },
+            "strokeOpacity": 0.5,
+            "scale": 2.3,
+            "strokeWidth": 0.5,
+            "x": {
+              "type": "Percent",
+              "value": 45.70680788050147
+            },
+            "y": {
+              "type": "Percent",
+              "value": 52.900001525878906
+            },
+            "name": "Med. Monk Seal(P10)"
+          }
+        },
+        "pointType": "Place",
+        "__parse": true
+      },
+      {
+        "fixed": false,
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -49.64192,
+            -48.94249
+          ],
+          "__parse": false
+        },
+        "id": "point_11",
+        "name": "Point 11",
+        "settings": {
+          "type": "Template",
+          "settings": {
+            "fillOpacity": 0.7,
+            "fill": {
+              "type": "Color",
+              "value": "#e03f35"
+            },
+            "stroke": {
+              "type": "Color",
+              "value": "#000000"
+            },
+            "strokeOpacity": 0.5,
+            "scale": 2.3,
+            "strokeWidth": 0.5,
+            "x": {
+              "type": "Percent",
+              "value": 42.14659685863874
+            },
+            "y": {
+              "type": "Percent",
+              "value": 57.900001525878906
+            }
+          }
+        },
+        "pointType": "Place",
+        "labelId": "label_1",
+        "__parse": true
+      }
+    ],
+    "editor.labelSeries": [
+      {
+        "fixed": false,
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -49.641915679222386,
+            -48.94249112264566
+          ],
+          "__parse": false
+        },
+        "id": "label_1",
+        "name": "Galápagos Sea Lion",
+        "populateText": true,
+        "settings": {
+          "type": "Template",
+          "settings": {
+            "text": "{name}",
+            "fill": {
+              "type": "Color",
+              "value": "#ffffff"
+            },
+            "fillOpacity": 1,
+            "fontSize": "1em",
+            "fontWeight": "normal",
+            "textAlign": "left",
+            "x": {
+              "type": "Percent",
+              "value": 42.14659685863874
+            },
+            "y": {
+              "type": "Percent",
+              "value": 57.900001525878906
+            }
+          }
+        },
+        "pointId": "point_11",
+        "pointSeries": "pointseries",
+        "labelPosition": "right",
+        "__parse": true
+      }
+    ],
+    "editor.bubbleSeries": [],
+    "editor.gridSeries": []
+  }
+}
+    </div>
 
 </body>
 </html>
