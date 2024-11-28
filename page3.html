@@ -1,3 +1,4 @@
+<!-- Application Page -->
 <!DOCTYPE html>
 <!DOCTYPE html>
 <html>
@@ -83,7 +84,27 @@
 
   <h1> Join Us</h1>
   <h2> Be a volunteer for Earth's waters.</h2>
+
+  <form action="/action_page.php">
+    <label for="fname">First name:</label><br>
+  <input type="text" id="fname" name="fname"><br>
+  <label for="lname">Last name:</label><br>
+  <input type="text" id="lname" name="lname"><br><br>
+
+    <p> Birthday: </p>
+    <input type="date" id="myDate" value="2014-02-09">
+    
+  <label for="role">Select your role:</label>
+  <select name="role" id="role">
+    <option value="volunteer">Volunteer</option>
+    <option value="Researcher">Researcher</option>
+    <option value="Biologist">Biologist</option>
+    <option value="Diver">Diver</option>
+  </select>
+  <br><br>
+</form>
   
+<h4> Please upload a valid ID(National ID, Passport, Driver's License are all valid)</h4>  
 <p>Click on the "Choose File" button to upload a file:</p>
 
 <form action="/action_page.php">
@@ -91,10 +112,12 @@
   <input type="submit">
 </form>
   
-  
-
-  
-  
+  <script>
+function myFunction() {
+  let x = document.getElementById("myDate").value;
+  document.getElementById("demo").innerHTML = x;
+}
+</script>
 
 </body>
 </html>
