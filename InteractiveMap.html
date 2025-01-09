@@ -14,7 +14,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimal-ui">
     <title> Neptune's Sentinel </title>
     <link rel="stylesheet" href="styles.css">
-  
+
+</head>
   <style>
     h1 {
       text-align: center;
@@ -371,7 +372,7 @@ am5viewer.create("chartdiv", {
         },
         "id": "point_1",
         "name": "Yangtze Finless Porpoise",
-	"imageUrl": "https://img2.chinadaily.com.cn/images/202101/06/5ff50adea31024adbdacbd1e.jpeg",
+	"url": "DATABANK.html",
         "settings": {
           "type": "Template",
           "settings": {
@@ -853,6 +854,19 @@ am5viewer.create("chartdiv", {
     "editor.bubbleSeries": [],
     "editor.gridSeries": []
   }
+});
+
+	// Add click event listener to points
+am5viewer.getChart("chartdiv").then(chart => {
+  chart.get("pointseries").get("children").each(point => {
+    point.events.on("click", () => {
+      // Navigate to the URL specified in the point data
+      const url = point.dataItem.dataContext.url;
+      if (url) {
+        window.location.href = url;
+      }
+    });
+  });
 });
 
 </script>
