@@ -45,19 +45,6 @@
         color: #003366;
       }
 
-      .topnav a.active {
-        background-color: #04AA6D;
-        color: white;
-      }
-
-      .topnav-centered a {
-        float: none;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-      }
-
       .topnav-right {
         float: right;
       }
@@ -67,13 +54,26 @@
           float: none;
           display: block;
         }
+      }
 
-        .topnav-centered a {
-          position: relative;
-          top: 10px;
-          left: 0;
-          transform: none;
-        }
+      .home-button {
+        position: fixed;
+        bottom: 20px;
+        left: 20px;
+        background-color: #04AA6D;
+        color: white;
+        padding: 10px 20px;
+        border-radius: 5px;
+        text-decoration: none;
+        font-size: 16px;
+        font-weight: bold;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      }
+
+      .home-button:hover {
+        background-color: #003366;
+        transform: scale(1.05);
       }
 
       form {
@@ -138,9 +138,6 @@
   </head>
   <body>
     <div class="topnav">
-      <div class="topnav-centered">
-        <a href="https://fv101lw.github.io/Final_Project/" class="active">Home</a>
-      </div>
       <a href="#about">About Us</a>
       <a href="#contact">Contact</a>
       <div class="topnav-right">
@@ -176,5 +173,7 @@
 
       <input type="submit" value="Submit">
     </form>
+
+    <a href="https://fv101lw.github.io/Final_Project/" class="home-button">Home</a>
   </body>
 </html>
