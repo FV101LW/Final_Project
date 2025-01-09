@@ -5,6 +5,39 @@ body {
     padding: 0;
 }  
 
+.topics-section {
+    text-align: center;
+    margin-top: 80px; /* Adjust as needed */
+    margin-bottom: 40px;
+}
+
+.topics-section h2 {
+    color: #003366;
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+.topics-list {
+    list-style-type: none;
+    padding: 0;
+    font-size: 1.2em;
+}
+
+.topics-list li {
+    margin: 10px 0;
+}
+
+.topics-list a {
+    text-decoration: none;
+    color: #005580;
+    transition: color 0.3s ease;
+}
+
+.topics-list a:hover {
+    color: #87CEEB;
+}
+
+
 .forum-container {
     max-width: 800px;
     margin: 50px auto; 
