@@ -1,94 +1,145 @@
-<!-- About section -->
 <!DOCTYPE html>
-<html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us</title>
   <style>
-    h1 {
-      text-align: center;
+    body {
+      background-color: #E6F7FF; /* Soft blue background */
+      font-family: "Arial", sans-serif;
+      margin: 0;
+      padding: 0;
     }
 
-    
+    .topnav {
+      background-color: #003366;
+      overflow: hidden;
+      padding: 10px 0;
+    }
+
     .topnav a {
-  float: left;
-  color: #f2f2f2;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 17px;
-}
+      float: left;
+      color: #f2f2f2;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      font-size: 17px;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
 
-.topnav a:hover {
-  background-color: #ddd;
-  color: black;
-}
+    .topnav a:hover {
+      background-color: #87CEEB;
+      color: #003366;
+    }
 
-.topnav a.active {
-  background-color: #04AA6D;
-  color: white;
-}
+    .topnav-right {
+      float: right;
+    }
 
-.topnav-centered a {
-  float: none;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
+    @media screen and (max-width: 600px) {
+      .topnav a, .topnav-right {
+        float: none;
+        display: block;
+      }
+    }
 
-.topnav-right {
-  float: right;
-}
+    h1 {
+      text-align: center;
+      color: #003366;
+      font-size: 2.5em;
+      margin-top: 20px;
+    }
 
-/* Responsive navigation menu (for mobile devices) */
-@media screen and (max-width: 600px) {
-  .topnav a, .topnav-right {
-    float: none;
-    display: block;
-  }
-  
-  .topnav-centered a {
-    position: relative;
-    top: 10;
-    left: 0;
-    transform: none;
-  }
-}
+    h2, h3 {
+      text-align: center;
+      color: #005580;
+      margin: 20px;
+    }
+
+    p {
+      text-align: center;
+      color: #003366;
+      font-size: 1.1em;
+      margin: 20px 40px;
+      line-height: 1.6;
+    }
+
+    .section {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #ffffff;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .image-container {
+      display: flex;
+      justify-content: center;
+      margin: 20px;
+    }
+
+    .image-container img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .home-button {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      background-color: #04AA6D;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: bold;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .home-button:hover {
+      background-color: #003366;
+      transform: scale(1.05);
+    }
   </style>
+</head>
 <body>
-
-<div class="topnav">
-
-  <!-- Centered link -->
-  <div class="topnav-centered">
-    <a href="https://fv101lw.github.io/Final_Project/" class="active">Home</a>
+  <div class="topnav">
+    <a href="#about">About Us</a>
+    <a href="#contact">Contact</a>
+    <div class="topnav-right">
+      <a href="#map">Interactive Map</a>
+      <a href="#data">Databank</a>
+    </div>
   </div>
-  
-  <!-- Left-aligned links (default) -->
-  <a href="#about">About Us</a>
-  <a href="#contact">Contact</a>
-  
-  <!-- Right-aligned links -->
-  <div class="topnav-right">
-    <a href="#map">Interactive Map</a>
-    <a href="#data">Databank</a>
+
+  <h1>About Us</h1>
+  <h3>Our project's mission is to provide an opportunity for volunteers from all sorts of backgrounds to coordinate and conduct activities for the preservation of ocean life and ecosystems.</h3>
+
+  <div class="section">
+    <h2>Location</h2>
+    <p>Mainly based in Asia.</p>
   </div>
-  
-</div>
 
-  <h1> About Us</h1>
-  <h3 style="text-align: center;"> Our project's mission is to provide an opportunity for volunteers from all sorts of backgrounds to be able to coordinate and conduct activities for the preservation of ocean life and ecosystem. </h3>
+  <div class="section">
+    <h1>Our Motivation</h1>
+    <h2>Problems of Our Seas</h2>
+    <p>The Earth's bodies of water have been under threat for several decades, mostly by human activities. Many individuals and groups have launched efforts to address the issue of our oceans' well-being. We intend to join this movement and establish a group for those who wish to contribute to the protection of aquatic life.</p>
+  </div>
 
-  <h3> Location: </h3>
-    <h2> Mainly based in Asia. </h2>
+  <div class="section">
+    <h1>SDG 14: Life Below Water</h1>
+    <div class="image-container">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Goal_14_SDG.png/512px-Goal_14_SDG.png" alt="SDG 14: Life Below Water">
+    </div>
+    <p>SDG 14 aims to conserve and sustainably use the oceans, seas, and marine resources for sustainable development. It addresses issues such as marine pollution, overfishing, and the preservation of marine biodiversity. Through collective efforts, we hope to contribute to achieving this global goal.</p>
+  </div>
 
-  <h1> Our Motivation </h1>
-  <h2> Problems of our Seas: </h2>
-  <p class="issue"; style="text-align: center;"> The Earth's bodies of water have been under threat for several decades, mostly by human activities. 
-    Many individuals and groups have launched efforts to address the issue of our oceans' well-being. 
-    We intend to join this part and establish a group, a movement for those who wish to step up and contribute in the protection of aquatic life.</p>
-
-  <h1> SDG 14: Life Below Water</h1>
-  
-
-
+  <a href="https://fv101lw.github.io/Final_Project/" class="home-button">Home</a>
 </body>
 </html>
