@@ -50,6 +50,11 @@ function loadComments() {
         const commentDiv = document.createElement("div");
         commentDiv.className = "comment";
 
+        // Create user name element
+        const userName = document.createElement("p");
+        userName.innerText = `Posted by: ${comment.userId}`;
+        userName.className = "user-name";
+
         const commentText = document.createElement("p");
         commentText.innerText = comment.text;
 
@@ -67,6 +72,7 @@ function loadComments() {
             }
         };
 
+        commentDiv.appendChild(userName);
         commentDiv.appendChild(commentText);
         commentDiv.appendChild(deleteButton);
         commentsSection.appendChild(commentDiv);
