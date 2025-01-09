@@ -62,12 +62,17 @@ button:hover {
     border: 1px solid #ddd;
     border-radius: 5px;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    flex-direction: column;
+    gap: 5px;
 }
 
 .comment p {
     margin: 0;
+}
+
+.user-name {
+    font-weight: bold;
+    color: royalblue;
 }
 
 .comment button {
