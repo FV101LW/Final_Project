@@ -1,123 +1,180 @@
-<!-- Application Page -->
-<!DOCTYPE html>
 <!DOCTYPE html>
 <html>
-  <style>
-    body {
-      background-color:royalblue;
-    }
-    h1 {
-      text-align: center;
-    }
+  <head>
+    <style>
+      body {
+        background-color: #87CEEB; /* A soothing light blue */
+        font-family: "Arial", sans-serif;
+        margin: 0;
+        padding: 0;
+      }
 
-    h2 {
-      text-align: center;
-    }
-    
-    .topnav a {
-  float: left;
-  color: #f2f2f2;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 17px;
-}
+      h1, h2 {
+        text-align: center;
+        color: #003366; /* Dark blue for contrast */
+        margin-top: 20px;
+      }
 
-.topnav a:hover {
-  background-color: #ddd;
-  color: black;
-}
+      h1 {
+        font-size: 2.5em;
+      }
 
-.topnav a.active {
-  background-color: #04AA6D;
-  color: white;
-}
+      h2 {
+        font-size: 1.8em;
+        margin-bottom: 20px;
+      }
 
-.topnav-centered a {
-  float: none;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
+      .topnav {
+        background-color: #003366;
+        overflow: hidden;
+        padding: 10px 0;
+      }
 
-.topnav-right {
-  float: right;
-}
+      .topnav a {
+        float: left;
+        color: #f2f2f2;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 17px;
+        transition: background-color 0.3s ease, color 0.3s ease;
+      }
 
-/* Responsive navigation menu (for mobile devices) */
-@media screen and (max-width: 600px) {
-  .topnav a, .topnav-right {
-    float: none;
-    display: block;
-  }
-  
-  .topnav-centered a {
-    position: relative;
-    top: 10;
-    left: 0;
-    transform: none;
-  }
-}
-  </style>
-<body>
+      .topnav a:hover {
+        background-color: #87CEEB;
+        color: #003366;
+      }
 
-<div class="topnav">
+      .topnav a.active {
+        background-color: #04AA6D;
+        color: white;
+      }
 
-  <!-- Centered link -->
-  <div class="topnav-centered">
-    <a href="https://fv101lw.github.io/Final_Project/" class="active">Home</a>
-  </div>
-  
-  <!-- Left-aligned links (default) -->
-  <a href="#about">About Us</a>
-  <a href="#contact">Contact</a>
-  
-  <!-- Right-aligned links -->
-  <div class="topnav-right">
-    <a href="#map">Interactive Map</a>
-    <a href="#data">Databank</a>
-  </div>
-  
-</div>
+      .topnav-centered a {
+        float: none;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
 
+      .topnav-right {
+        float: right;
+      }
 
-  <h1> Join Us</h1>
-  <h2> Be a volunteer for Earth's waters.</h2>
+      @media screen and (max-width: 600px) {
+        .topnav a, .topnav-right {
+          float: none;
+          display: block;
+        }
 
-  <form action="/action_page.php">
-    <label for="fname">First name:</label><br>
-  <input type="text" id="fname" name="fname"><br>
-  <label for="lname">Last name:</label><br>
-  <input type="text" id="lname" name="lname"><br><br>
+        .topnav-centered a {
+          position: relative;
+          top: 10px;
+          left: 0;
+          transform: none;
+        }
+      }
 
-    <p> Birthday: </p>
-    <input type="date" id="myDate" value="2014-02-09">
-    
-  <label for="role">Select your role:</label>
-  <select name="role" id="role">
-    <option value="volunteer">Volunteer</option>
-    <option value="Researcher">Researcher</option>
-    <option value="Biologist">Biologist</option>
-    <option value="Diver">Diver</option>
-  </select>
-  <br><br>
-</form>
-  
-<h4> Please upload a valid ID(National ID, Passport, Driver's License are all valid)</h4>  
-<p>Click on the "Choose File" button to upload a file:</p>
+      form {
+        background-color: #f9f9f9;
+        max-width: 600px;
+        margin: 20px auto;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
 
-<form action="/action_page.php">
-  <input type="file" id="myFile" name="filename">
-  <input type="submit">
-</form>
-  
-  <script>
-function myFunction() {
-  let x = document.getElementById("myDate").value;
-  document.getElementById("demo").innerHTML = x;
-}
-</script>
+      form label {
+        display: block;
+        font-size: 1.1em;
+        margin-bottom: 8px;
+        color: #003366;
+      }
 
-</body>
+      form input[type="text"], form input[type="date"], form select {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 1em;
+      }
+
+      form input[type="file"] {
+        border: none;
+        padding: 10px;
+        font-size: 1em;
+      }
+
+      form input[type="submit"] {
+        background-color: #04AA6D;
+        color: white;
+        border: none;
+        padding: 12px 20px;
+        border-radius: 5px;
+        font-size: 1em;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+
+      form input[type="submit"]:hover {
+        background-color: #003366;
+      }
+
+      h4 {
+        text-align: center;
+        color: #003366;
+        margin-top: 20px;
+        font-size: 1.3em;
+      }
+
+      p {
+        text-align: center;
+        font-size: 1.1em;
+        color: #003366;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="topnav">
+      <div class="topnav-centered">
+        <a href="https://fv101lw.github.io/Final_Project/" class="active">Home</a>
+      </div>
+      <a href="#about">About Us</a>
+      <a href="#contact">Contact</a>
+      <div class="topnav-right">
+        <a href="#map">Interactive Map</a>
+        <a href="#data">Databank</a>
+      </div>
+    </div>
+
+    <h1>Join Us</h1>
+    <h2>Be a Volunteer for Earth's Waters</h2>
+
+    <form action="/action_page.php">
+      <label for="fname">First Name:</label>
+      <input type="text" id="fname" name="fname" placeholder="Enter your first name">
+      
+      <label for="lname">Last Name:</label>
+      <input type="text" id="lname" name="lname" placeholder="Enter your last name">
+
+      <label for="myDate">Birthday:</label>
+      <input type="date" id="myDate" name="birthdate">
+
+      <label for="role">Select Your Role:</label>
+      <select name="role" id="role">
+        <option value="volunteer">Volunteer</option>
+        <option value="researcher">Researcher</option>
+        <option value="biologist">Biologist</option>
+        <option value="diver">Diver</option>
+      </select>
+
+      <h4>Please Upload a Valid ID</h4>
+      <p>(National ID, Passport, Driver's License are all valid)</p>
+      <input type="file" id="myFile" name="filename">
+
+      <input type="submit" value="Submit">
+    </form>
+  </body>
 </html>
