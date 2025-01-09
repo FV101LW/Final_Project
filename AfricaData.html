@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neptune's Sentinels - Databank</title>
+    <link 
+      rel="stylesheet" 
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" 
+      integrity="sha384-QeZ6FxTqNJCe9TE4WlBTOs3lKfEuCcwivz2Gu2GKR3oHfkrXKnQnnTwnmDFy/xzo" 
+      crossorigin=""
+    />
+    <style>
+        body {
+            background-color: #E6F7FF; /* Light blue background for marine theme */
+            font-family: "Arial", sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #003366;
+        }
+
+        .topnav {
+            background-color: #003366;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .topnav a {
+            color: #87CEEB;
+            text-decoration: none;
+            padding: 14px 16px;
+            font-size: 17px;
+        }
+
+        .topnav a:hover {
+            background-color: #87CEEB;
+            color: #003366;
+        }
+
+        .topnav a.active {
+            background-color: #005580;
+            color: white;
+        }
+
+        .topnav-left {
+            display: flex;
+        }
+
+        .topnav-right {
+            display: flex;
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 80px; /* Adjusted for the fixed topnav */
+            color: #005580;
+            font-size: 2.5em;
+        }
+
+        h2 {
+            text-align: center;
+            margin-top: 80px; 
+            color: #005580;
+            font-size: 2.5em;
+        }
+
+        .species-section {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            margin: 40px;
+        }
+
+        .species-card {
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            max-width: 300px;
+            text-align: center;
+            padding: 20px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .species-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+        }
+
+        .species-card img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .species-card p {
+            margin: 10px 0;
+            color: #003366;
+        }
+
+        .home-button {
+            position: fixed;
+            bottom: 60px; /* Adjusted to appear above the footer */
+            left: 20px;
+            background-color: #04AA6D; /* Green button */
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            font-size: 16px;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .home-button:hover {
+            background-color: #028a5b;
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        footer {
+            background-color: #003366;
+            color: #ffffff;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        /* New styles for the column of images */
+        .image-column {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .image-column a {
+            display: block;
+            text-align: center;
+        }
+
+        .image-column img {
+            width: 200px;
+            height: auto;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .image-column img:hover {
+            transform: scale(1.05);
+        }
+
+        @media screen and (max-width: 600px) {
+            .topnav {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .topnav a {
+                display: block;
+                text-align: left;
+            }
+
+            .species-section {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .home-button {
+                bottom: 80px; /* Adjusted for mobile layout */
+                left: 10px;
+                font-size: 14px;
+                padding: 8px 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="topnav">
+    <!-- Left-aligned links -->
+    <div class="topnav-left">
+        <a href="About.html">About Us</a>
+        <a href="ApplicationPage.html">Contact</a>
+    </div>
+  
+    <!-- Right-aligned links -->
+    <div class="topnav-right">
+        <a href="InteractiveMap.html">Interactive Map</a>
+        <a href="DATABANK.html">Databank</a>
+    </div>
+</div>
+
+<h1>Hall of Endangered Species</h1>
+    <h2><strong> Asia </strong></h2>
+
+<div class="species-section">
+    <div class="species-card">
+        <img src="https://cdn01.allafrica.com/download/pic/main/main/csiid/00561635:afc04a4a3f61ad637367bf9f626e3410:arc614x376:w1200.jpg" alt="Scalloped Hammerhead">
+        <p><strong> Scalloped Hammerhead Shark </strong></p>
+        <p><em>Binomial Name:</em> Sphyrna lewini </p>
+        <p><em>Native Area:</em> Congo </p>
+        <p><em>Total Population:</em> Unknown </p>
+        <p><em>Status:</em> Critically Endangered </p>
+        <p><em>Threats:</em> Overfishing, Shark fin soup </p>
+    </div>
+
+    <div class="species-card">
+        <img src="https://www.oceanodyssey.co.za/wp-content/uploads/2019/08/DSC_3579-1024x697.jpg" alt="Knysna Seahorse">
+        <p><strong> Knysna Seahorse </strong></p>
+        <p><em>Binomial Name:</em> Hippocampus capensis </p>
+        <p><em>Native Area:</em> South Africa </p>
+        <p><em>Total Population:</em> ~28,000 </p>
+        <p><em>Status:</em> Endangered </p>
+        <p><em>Threats:</em> Habitat loss, Floods, Recreational Activities in estuaries </p>
+    </div>
+  <div class="species-card">
+        <img src="https://wwfeu.awsassets.panda.org/img/wwf_angelsharkssummary_2020_v1_folder_2flinks_2fshutterstock_1134057800_ext__3__767437.jpg" alt="African angelshark">
+        <p><strong>African angelshark</strong></p>
+        <p><em>Binomial Name:</em> Squatina africana </p>
+        <p><em>Native Area:</em> East and Southern Africa </p>
+        <p><em>Total Population:</em> Unknown</p>
+        <p><em>Status:</em> Nearly Threatened </p>
+        <p><em>Threats:</em> Habitat damage, Fishing bycatch</p>
+    </div>
+  <div class="species-card">
+        <img src="https://www.earth.com/assets/_next/image/?url=https%3A%2F%2Fcff2.earth.com%2Fuploads%2F2024%2F10%2F30073839%2FPenguin-extinction-1400x850.jpg&w=1200&q=75" alt="African Penguin">
+        <p><strong> African Penguin </strong></p>
+        <p><em>Binomial Name:</em> Spheniscus demersus </p>
+        <p><em>Native Area:</em> Southern Africa </p>
+        <p><em>Total Population:</em> ~19,800 </p>
+        <p><em>Status:</em> Critically Endangered </p>
+        <p><em>Threats:</em> Habitat loss, Predators, Oil spills, Lack of food </p>
+    </div>
+  <div class="species-card">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Pungu_maclareni_6784662.jpg/1200px-Pungu_maclareni_6784662.jpg" alt="Pungu">
+        <p><strong> Pungu </strong></p>
+        <p><em>Binomial Name:</em> Pungu maclareni </p>
+        <p><em>Native Area:</em> Cameroon </p>
+        <p><em>Total Population:</em> Unknown </p>
+        <p><em>Status:</em> Critically Endangered </p>
+        <p><em>Threats:</em> Pollution, Siltation </p>
+    </div>
+
+</div>
+
+<a href="https://fv101lw.github.io/Final_Project/DATABANK.html" class="home-button">Back to Databank</a>
+
+<a href="https://fv101lw.github.io/Final_Project/" class="home-button">Home</a>
+
+<footer>
+    © 2025 Neptune's Sentinels | Protecting Marine Biodiversity
+</footer>
+
+</body>
+</html>
