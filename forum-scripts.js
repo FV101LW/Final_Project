@@ -3,7 +3,7 @@ window.onload = function() {
     loadComments();
 }
 
-// Function to add a comment
+// Function to add a comment 
 function addComment() {
     const input = document.getElementById("commentInput");
     const commentsSection = document.getElementById("commentsSection");
