@@ -854,6 +854,42 @@ am5viewer.create("chartdiv", {
   }
 });
 
+// Set up events
+var previousPolygon;
+
+polygonSeries.mapPolygons.template.on("active", function(active, target) {
+  if (previousPolygon && previousPolygon != target) {
+    previousPolygon.set("active", false);
+  }
+  if (target.get("active")) {
+    selectCountry(target.dataItem.get("id"));
+  }
+  previousPolygon = target;
+});
+
+function selectCountry(id) {
+  var dataItem = polygonSeries.getDataItemById(id);
+  var target = dataItem.get("mapPolygon");
+  if (target) {
+    var centroid = target.geoCentroid();
+    if (centroid) {
+      chart.animate({ key: "rotationX", to: -centroid.longitude, duration: 1500, easing: am5.ease.inOut(am5.ease.cubic) });
+      chart.animate({ key: "rotationY", to: -centroid.latitude, duration: 1500, easing: am5.ease.inOut(am5.ease.cubic) });
+    }
+  }
+}
+
+// Uncomment this to pre-center the globe on a country when it loads
+polygonSeries.events.on("datavalidated", function() {
+  selectCountry("AU");
+});
+
+
+// Make stuff animate on load
+chart.appear(1000, 100);
+
+}); // end am5.ready()
+	
 </script>
 
 </body>
