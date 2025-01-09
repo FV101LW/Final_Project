@@ -7,14 +7,31 @@ body {
 
 .topics-section {
     text-align: center;
-    margin-top: 80px; /* Adjust as needed */
-    margin-bottom: 40px;
+    /* margin-top: 80px; /* Adjust as needed */
+    /* margin-bottom: 40px; */
+    background-color: #E6F7FF; /* Light blue background */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    margin: 40px auto;
+    max-width: 800px; /* Adjust width for layout */
+    opacity: 0; /* Starting from this part, for Animation */
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.topics-section.visible { /* For Animation too */
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .topics-section h2 {
     color: #003366;
     font-size: 2em;
-    margin-bottom: 10px;
+     border-bottom: 2px solid #005580;
+    display: inline-block;
+    padding-bottom: 5px;
+    margin-bottom: 20px;
 }
 
 .topics-list {
@@ -25,16 +42,58 @@ body {
 
 .topics-list li {
     margin: 10px 0;
+    padding: 10px 20px;
+    border: 1px solid #005580;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.topics-list li:hover {
+    background-color: #87CEEB;
+    color: white;
+    transform: translateY(-5px);
 }
 
 .topics-list a {
+    display: block;
+    color: inherit; /* Inherit color from parent */
     text-decoration: none;
+}
+
+.topics-list a i {
+    margin-right: 8px;
     color: #005580;
     transition: color 0.3s ease;
 }
 
-.topics-list a:hover {
+.topics-list a:hover i {
     color: #87CEEB;
+}
+
+/* For responsive features */
+@media screen and (max-width: 600px) {
+    .topics-list li {
+        font-size: 0.9em;
+        padding: 8px 16px;
+    }
+
+    .topics-section h2 {
+        font-size: 1.5em;
+    }
+}
+
+.search-container { /* For filter search bar */
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.search-container input { /* Same for search bar */
+    width: 80%;
+    max-width: 400px;
+    padding: 10px;
+    border: 1px solid #005580;
+    border-radius: 5px;
+    font-size: 1em;
 }
 
 
