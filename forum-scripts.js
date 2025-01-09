@@ -2,7 +2,7 @@
 window.onload = function() {
     loadComments();
 }
-
+ 
 // Function to add a comment
 function addComment() {
     const input = document.getElementById("commentInput");
