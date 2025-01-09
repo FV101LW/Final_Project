@@ -1,4 +1,46 @@
-// Function to load and display comments from localStorage
+// Load comments from localStorage and display them when the page is loaded
+window.onload = function() {
+    loadComments();
+}
+
+// Function to add a comment
+function addComment() {
+    const input = document.getElementById("commentInput");
+    const commentsSection = document.getElementById("commentsSection");
+
+    if (input.value.trim() === "") {
+        alert("Please enter a comment before posting.");
+        return;
+    }
+
+    // Prompt user to enter their name
+    const userName = prompt("Please enter your name to identify your comments (it will be used for deleting your comment).");
+
+    if (!userName) {
+        alert("Name is required to post a comment.");
+        return;
+    }
+
+    // Store the comment data
+    const commentId = new Date().getTime(); // Unique ID for each comment
+    const commentData = {
+        id: commentId,
+        text: input.value,
+        userName: userName
+    };
+
+    const comments = JSON.parse(localStorage.getItem("comments")) || [];
+    comments.push(commentData);
+    localStorage.setItem("comments", JSON.stringify(comments));
+
+    // Clear the input
+    input.value = "";
+
+    // Reload the comments
+    loadComments();
+}
+
+// Function to load and display comments
 function loadComments() {
     const commentsSection = document.getElementById("commentsSection");
     commentsSection.innerHTML = "<h2>Comments</h2>"; // Reset the section
@@ -8,112 +50,42 @@ function loadComments() {
     comments.forEach(comment => {
         const commentDiv = document.createElement("div");
         commentDiv.className = "comment";
-        commentDiv.id = "comment-" + comment.id;
+
+        // Create user name element
+        const userName = document.createElement("p");
+        userName.innerText = `Posted by: ${comment.userName}`;
+        userName.className = "user-name";
 
         const commentText = document.createElement("p");
         commentText.innerText = comment.text;
 
-        const replyButton = document.createElement("button");
-        replyButton.innerText = "Reply";
-        replyButton.onclick = function() {
-            showReplyInput(comment.id);
+        const deleteButton = document.createElement("button");
+        deleteButton.innerText = "Delete";
+
+        // Only allow the commenter to delete their own comment
+        deleteButton.onclick = function () {
+            const currentUser = prompt("Enter your name to delete the comment:");
+
+            if (currentUser === comment.userName) {
+                deleteComment(comment.id);
+            } else {
+                alert("You can only delete your own comments.");
+            }
         };
 
+        commentDiv.appendChild(userName);
         commentDiv.appendChild(commentText);
-        commentDiv.appendChild(replyButton);
-
-        // Display replies if they exist
-        if (comment.replies && comment.replies.length > 0) {
-            const repliesDiv = document.createElement("div");
-            repliesDiv.className = "replies";
-            comment.replies.forEach(reply => {
-                const replyDiv = document.createElement("div");
-                replyDiv.className = "reply";
-                replyDiv.innerText = reply;
-                repliesDiv.appendChild(replyDiv);
-            });
-            commentDiv.appendChild(repliesDiv);
-        }
-
+        commentDiv.appendChild(deleteButton);
         commentsSection.appendChild(commentDiv);
     });
 }
 
-// Function to add a main comment
-function addComment() {
-    const input = document.getElementById("commentInput");
-    const commentsSection = document.getElementById("commentsSection");
-
-    // Get the comment text
-    if (input.value.trim() === "") {
-        alert("Please enter a comment before posting.");
-        return;
-    }
-
-    const commentId = new Date().getTime(); // Unique ID for each comment
-    const commentData = {
-        id: commentId,
-        text: input.value,
-        replies: [] // Array to hold replies for this comment
-    };
-
-    // Save comment data to localStorage
+// Function to delete a comment by ID
+function deleteComment(commentId) {
     const comments = JSON.parse(localStorage.getItem("comments")) || [];
-    comments.push(commentData);
-    localStorage.setItem("comments", JSON.stringify(comments));
-
-    // Clear the input field
-    input.value = "";
+    const filteredComments = comments.filter(comment => comment.id !== commentId);
+    localStorage.setItem("comments", JSON.stringify(filteredComments));
 
     // Reload the comments
-    loadComments();
-}
-
-// Function to display the reply input under a specific comment
-function showReplyInput(commentId) {
-    const commentDiv = document.getElementById("comment-" + commentId);
-    const replyInput = document.createElement("div");
-    replyInput.className = "reply-input";
-
-    const replyTextarea = document.createElement("textarea");
-    replyTextarea.placeholder = "Write a reply...";
-
-    const submitReplyButton = document.createElement("button");
-    submitReplyButton.innerText = "Post Reply";
-    submitReplyButton.onclick = function() {
-        addReply(commentId, replyTextarea.value);
-    };
-
-    replyInput.appendChild(replyTextarea);
-    replyInput.appendChild(submitReplyButton);
-
-    commentDiv.appendChild(replyInput);
-}
-
-// Function to add a reply to a comment
-function addReply(commentId, replyText) {
-    if (replyText.trim() === "") {
-        alert("Please enter a reply before posting.");
-        return;
-    }
-
-    // Get the comments from localStorage
-    const comments = JSON.parse(localStorage.getItem("comments")) || [];
-    
-    // Find the comment to which the reply belongs
-    const comment = comments.find(c => c.id === commentId);
-    
-    // Add the reply to the comment's replies array
-    comment.replies.push(replyText);
-    
-    // Save the updated comments back to localStorage
-    localStorage.setItem("comments", JSON.stringify(comments));
-
-    // Reload the comments to show the new reply
-    loadComments();
-}
-
-// Load comments when the page loads
-window.onload = function() {
     loadComments();
 }
