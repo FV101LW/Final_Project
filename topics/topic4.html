@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discussion Forum</title>   
+    <link rel="stylesheet" href="topics_styles.css">
+    <style>
+        .home-button {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      background-color: #04AA6D;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: bold;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .home-button:hover {
+      background-color: #003366;
+      transform: scale(1.05);
+    }
+    </style>
+</head>
+<body> 
+    <div class="topics-section">
+        <h1>Climate Change</h1>
+        <ul class="topics-list">
+            <li><a href="https://fv101lw.github.io/Final_Project/discussion-forum.html">Return the Main Forum</a></li>
+            <li><a href="https://fv101lw.github.io/Final_Project/topics/topic1.html"><i class="fas fa-fish"></i> Marine Life</a></li>
+            <li><a href="https://fv101lw.github.io/Final_Project/topics/topic2.html"><i class="fas fa-leaf"></i> Endangered Species</a></li>
+            <li><a href="https://fv101lw.github.io/Final_Project/topics/topic3.html"><i class="fas fa-recycle"></i> Environmental Protection</a></li>
+            <li><a href="topics/topic5.html"><i class="fa-solid fa-hand-holding-heart"></i>Activities</a></li>
+        </ul>
+    </div>
+    
+    <div class="forum-container">
+        <h1>Discussion Forum</h1> 
+        <div class="input-container">
+            <textarea id="commentInput" placeholder="Share your thoughts here... Please keep it related to Protection of our environment : 3."></textarea>
+            <button onclick="addComment()">Post Comment</button>
+        </div>
+        <div id="commentsSection">
+            <h2>Comments</h2>
+        </div>
+    </div>
+    <script src="topics_scripts.js"></script>
+
+    <a href="https://fv101lw.github.io/Final_Project/" class="home-button">Home</a>
+</body>
+</html>
