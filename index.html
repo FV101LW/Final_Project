@@ -2,11 +2,11 @@
 <html lang="en">
 <head>
     <link 
-      rel="stylesheet" 
-      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" 
-      integrity="sha384-QeZ6FxTqNJCe9TE4WlBTOs3lKfEuCcwivz2Gu2GKR3oHfkrXKnQnnTwnmDFy/xzo" 
-      crossorigin=""
-    />
+  rel="stylesheet" 
+  href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" 
+  integrity="sha384-QeZ6FxTqNJCe9TE4WlBTOs3lKfEuCcwivz2Gu2GKR3oHfkrXKnQnnTwnmDFy/xzo" 
+  crossorigin=""
+/>
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,120 +15,95 @@
     <style>
         body {
             background-color: royalblue;
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
         }
 
         .title {
             color: white;
-            text-align: center;
-            padding: 20px;
         }
 
-        /* For top navigation menu */
-        .topnav {
-            position: relative;
-            overflow: hidden;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background-color: #333;
-            padding: 10px;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-        }
+        <!-- For top navigation menu -->
+        
+.topnav {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #333;
+  padding: 10px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+    z-index: 1000;
+}
+        
+.topnav a {
+  float: left;
+  color: #87CEEB;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
 
-        .topnav a {
-            color: #87CEEB;
-            text-align: center;
-            padding: 14px 16px;
-            text-decoration: none;
-            font-size: 17px;
-        }
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
 
-        .topnav a:hover {
-            background-color: #ddd;
-            color: black;
-        }
+.topnav a.active {
+  background-color: cornflowerblue;
+  color: white;
+}
 
-        .topnav a.active {
-            background-color: cornflowerblue;
-            color: white;
-        }
+.topnav-centered a {
+    flex-grow: 1;
+    text-align: center;
+  float: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
 
-        .topnav-centered a {
-            flex-grow: 1;
-            text-align: center;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-        }
+.topnav-right {
+  display: flex;
+  float: right;
+    justify-content: flex-end;
+}
 
-        .topnav-right {
-            display: flex;
-            justify-content: flex-end;
-        }
-
-        /* Responsive navigation menu (for mobile devices) */
-        @media screen and (max-width: 600px) {
-            .topnav a, .topnav-right {
-                float: none;
-                display: block;
-                text-align: left;
-            }
-
-            .topnav-centered a {
-                text-align: center;
-                position: relative;
-                top: 0;
-                left: 0;
-                transform: none;
-            }
-        }
-
-        /* Styles for Discussion Forum Button */
-        .discussion-button {
-            display: block;
-            width: 220px;
-            margin: 40px auto;
-            padding: 15px 20px;
-            text-align: center;
-            background-color: #2874A6;
-            color: white;
-            text-decoration: none;
-            font-size: 18px;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-        }
-
-        .discussion-button:hover {
-            background-color: #21618C;
-        }
-
-        /* Styles for Slideshow */
+/* Responsive navigation menu (for mobile devices) */
+@media screen and (max-width: 600px) {
+  .topnav a, .topnav-right {
+    float: none;
+    display: block;
+      text-align: left;
+  }
+  
+  .topnav-centered a {
+      text-align: center;
+    position: relative;
+    top: 0;
+    left: 0;
+    transform: none;
+  }
+}
+        /* Basic styles for slideshow */
         .slideshow-container {
             position: relative;
             max-width: 100%;
             margin: auto;
         }
-
         .mySlides {
             display: none;
         }
-
         .fade {
             animation: fade 1s;
         }
-
         @keyframes fade {
             from { opacity: 0.4; }
             to { opacity: 1; }
         }
-
         .prev, .next {
             cursor: pointer;
             position: absolute;
@@ -142,12 +117,10 @@
             border-radius: 0 3px 3px 0;
             user-select: none;
         }
-
         .next {
             right: 0;
             border-radius: 3px 0 0 3px;
         }
-
         .dot {
             cursor: pointer;
             height: 15px;
@@ -157,10 +130,11 @@
             border-radius: 50%;
             display: inline-block;
         }
-
         .active, .dot:hover {
             background-color: #717171;
         }
+        
+        
     </style>
 </head>
 <body>
@@ -171,51 +145,58 @@
   <div class="topnav-centered">
     <a href="https://fv101lw.github.io/Final_Project/" class="active">Home</a>
   </div>
-
+  
   <!-- Left-aligned links (default) -->
   <a href="About.html">About Us</a>
   <a href="ApplicationPage.html">Contact</a>
-
+  
   <!-- Right-aligned links -->
   <div class="topnav-right">
     <a href="InteractiveMap.html">Interactive Map</a>
     <a href="DATABANK.html">Databank</a>
   </div>
-
+  
 </div>
-
-<p id="currentTime"></p>
-
-<div class="slideshow-container">
-    <div class="mySlides fade">
-        <img src="https://images4.alphacoders.com/121/121336.jpg" style="width:100%">
-        <div class="text">Coral Reef.</div>
+    <p id="currentTime"></p>
+    
+    <div class="slideshow-container">
+        <div class="mySlides fade">
+            <!-- <div class="numbertext">1 / 3</div> -->
+            <img src="https://images4.alphacoders.com/121/121336.jpg" style="width:100%">
+            <div class="text">Coral Reef.</div>
+        </div>
+        <div class="mySlides fade">
+            
+            <img src="https://ocean.si.edu/sites/default/files/styles/full_width_largest/public/2023-11/HawaiianMonkSeal_JamesWatt_SeaPicsCropped_0_0.jpg.webp?itok=N7hWoOm-" style="width:100%">
+            <div class="text">Seal.</div>
+        </div>
+        <div class="mySlides fade">
+            
+            <img src="https://blog.padi.com/wp-content/uploads/2016/01/160108-Philippines-Marine-Life-Dugong-650x400.jpg" style="width:100%">
+            <div class="text">Manatee.</div>
+        </div>
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
     </div>
-    <div class="mySlides fade">
-        <img src="https://ocean.si.edu/sites/default/files/styles/full_width_largest/public/2023-11/HawaiianMonkSeal_JamesWatt_SeaPicsCropped_0_0.jpg.webp?itok=N7hWoOm-" style="width:100%">
-        <div class="text">Seal.</div>
+    
+    <br>
+    <div style="text-align:center">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
     </div>
-    <div class="mySlides fade">
-        <img src="https://blog.padi.com/wp-content/uploads/2016/01/160108-Philippines-Marine-Life-Dugong-650x400.jpg" style="width:100%">
-        <div class="text">Manatee.</div>
-    </div>
-    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-    <a class="next" onclick="plusSlides(1)">&#10095;</a>
-</div>
 
-<br>
-<div style="text-align:center">
-    <span class="dot" onclick="currentSlide(1)"></span>
-    <span class="dot" onclick="currentSlide(2)"></span>
-    <span class="dot" onclick="currentSlide(3)"></span>
-</div>
+    <div id="map"></div>
 
-<div id="map"></div>
-
-<a href="discussion_forum.html" class="discussion-button">Go to Discussion Forum</a>
-
-<script>
-    // Initialize the map
+    <script>
+    
+  src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" 
+  integrity="sha384-o/Va6EiwcC2s8AA2B+6lsFwEMT3oR0zOUp5afmPaToN1m1NjoTImXF9h/Nb9jA1f" 
+  crossorigin="">
+      </script>
+    
+    <script>
+        // Initialize the map
     const map = L.map('map').setView([20, 0], 2); // Center at [latitude, longitude], zoom level
 
     // Add OpenStreetMap tiles
@@ -226,41 +207,42 @@
     // Add a marker with a popup
     const marker = L.marker([51.5, -0.09]).addTo(map);
     marker.bindPopup("<b>Hello world!</b><br>I am a popup.").openPopup();
+    </script>
+    <script>
 
-    let slideIndex = 0;
-    showSlides();
+        let slideIndex = 0;
+        showSlides();
 
-    function showSlides() {
-        const slides = document.getElementsByClassName("mySlides");
-        const dots = document.getElementsByClassName("dot");
+        function showSlides() {
+            const slides = document.getElementsByClassName("mySlides");
+            const dots = document.getElementsByClassName("dot");
 
-        for (let i = 0; i < slides.length; i++) {
-            slides[i].style.display = "none";  
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";  
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) { slideIndex = 1 }    
+            for (let i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex - 1].style.display = "block";  
+            dots[slideIndex - 1].className += " active";
+            setTimeout(showSlides, 3000); // Change image every 3 seconds
         }
-        slideIndex++;
-        if (slideIndex > slides.length) { slideIndex = 1 }    
-        for (let i = 0; i < dots.length; i++) {
-            dots[i].className = dots[i].className.replace(" active", "");
+
+        function plusSlides(n) {
+            clearInterval(slideInterval);
+            showSlides(slideIndex += n);
         }
-        slides[slideIndex - 1].style.display = "block";  
-        dots[slideIndex - 1].className += " active";
-        setTimeout(showSlides, 3000); // Change image every 3 seconds
-    }
 
-    function plusSlides(n) {
-        clearInterval(slideInterval);
-        showSlides(slideIndex += n);
-    }
+        function currentSlide(n) {
+            clearInterval(slideInterval);
+            showSlides(slideIndex = n);
+        }
+    </script>
+  <h1 class="title">Life Below Water</h1>
 
-    function currentSlide(n) {
-        clearInterval(slideInterval);
-        showSlides(slideIndex = n);
-    }
-</script>
-
-<h1 class="title">Life Below Water</h1>
-<h3> Feeling bored? Here's an educational minigame:</h3>
-<a href="game.html">Minigame</a>
-
+    <h3> Feeling bored? Here's an educational minigame:</h3>
+    <<a href="game.html">Minigame</a>
 </body>
 </html>
