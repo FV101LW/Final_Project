@@ -61,30 +61,22 @@ button:hover {
     margin-bottom: 10px;
     border: 1px solid #ddd;
     border-radius: 5px;
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
 }
 
-.comment p {
-    margin: 0;
+.reply-input {
+    margin-top: 10px;
+    padding-left: 20px;
 }
 
-.user-name {
-    font-weight: bold;
-    color: royalblue;
+.replies {
+    margin-top: 10px;
+    padding-left: 40px;
 }
 
-.comment button {
-    background: red;
-    color: white;
-    border: none;
-    padding: 5px 10px;
+.reply {
+    background-color: #eef4ff;
+    padding: 5px;
+    margin-top: 5px;
     border-radius: 5px;
-    cursor: pointer;
-    font-size: 14px;
-}
-
-.comment button:hover {
-    background: darkred;
+    border: 1px solid #bbb;
 }
