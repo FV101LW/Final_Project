@@ -5,8 +5,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Discussion Forum</title>   
     <link rel="stylesheet" href="forum-styles.css">
+    <style>
+        .home-button {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      background-color: #04AA6D;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: bold;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .home-button:hover {
+      background-color: #003366;
+      transform: scale(1.05);
+    }
+    </style>
 </head>
 <body> 
+    <div class="topics-section">
+        <h2>Topics</h2>
+        <ul class="topics-list">
+            <li><a href="#topic1">Marine Life</a></li>
+            <li><a href="#topic2">Endangered Species</a></li>
+            <li><a href="#topic3">Environmental Protection</a></li>
+            <li><a href="#topic4">Climate Change</a></li>
+            <li><a href="#topic5">Activities</a></li>
+        </ul>
+    </div>
+    
     <div class="forum-container">
         <h1>Discussion Forum</h1> 
         <div class="input-container">
@@ -18,5 +50,7 @@
         </div>
     </div>
     <script src="forum-scripts.js"></script>
+
+    <a href="https://fv101lw.github.io/Final_Project/" class="home-button">Home</a>
 </body>
 </html>
