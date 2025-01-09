@@ -89,3 +89,27 @@ function deleteComment(commentId) {
     // Reload the comments
     loadComments();
 }
+
+/* For topics */
+document.addEventListener('DOMContentLoaded', () => {
+    const topicsSection = document.querySelector('.topics-section');
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                topicsSection.classList.add('visible');
+            }
+        });
+    }, { threshold: 0.1 });
+    observer.observe(topicsSection);
+});
+
+/* For topics search bar */
+document.getElementById('searchTopics').addEventListener('input', (event) => {
+    const query = event.target.value.toLowerCase();
+    const topics = document.querySelectorAll('.topics-list li');
+
+    topics.forEach(topic => {
+        const text = topic.textContent.toLowerCase();
+        topic.style.display = text.includes(query) ? 'block' : 'none';
+    });
+});
