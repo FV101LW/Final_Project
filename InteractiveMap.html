@@ -157,35 +157,6 @@ am5viewer.create("chartdiv", {
       "pointLabelText": "Galápagos Sea Lion",
       "__parse": true
     },
-
-    "editor.pointSeries": {
-        "onClick": function (ev) {
-          const data = ev.target.dataItem.dataContext;
-
-          // Create a custom popup
-          const popup = document.createElement('div');
-          popup.id = 'popup';
-          popup.style.position = 'absolute';
-          popup.style.backgroundColor = 'white';
-          popup.style.border = '1px solid black';
-          popup.style.padding = '10px';
-          popup.style.top = `${ev.event.clientY}px`;
-          popup.style.left = `${ev.event.clientX}px`;
-          popup.innerHTML = `
-            <h4>${data.name}</h4>
-            <img src="${data.imageUrl}" alt="${data.name}" style="width: 200px; height: auto;">
-          `;
-          
-          // Add close button
-          const closeButton = document.createElement('button');
-          closeButton.textContent = 'Close';
-          closeButton.onclick = () => document.body.removeChild(popup);
-          popup.appendChild(closeButton);
-
-          // Append popup to body
-          document.body.appendChild(popup);
-        }
-      },
 	  
     "editor.map": {
       "minZoomLevel": 0.8,
@@ -320,7 +291,33 @@ am5viewer.create("chartdiv", {
       "geometryField": "geometry",
       "geometryTypeField": "geometryType",
       "idField": "id",
-      "__parse": true
+      "__parse": true,
+      "onClick": function (ev) {
+          const data = ev.target.dataItem.dataContext;
+
+          // Create a custom popup
+          const popup = document.createElement('div');
+          popup.id = 'popup';
+          popup.style.position = 'absolute';
+          popup.style.backgroundColor = 'white';
+          popup.style.border = '1px solid black';
+          popup.style.padding = '10px';
+          popup.style.top = `${ev.event.clientY}px`;
+          popup.style.left = `${ev.event.clientX}px`;
+          popup.innerHTML = `
+            <h4>${data.name}</h4>
+            <img src="${data.imageUrl}" alt="${data.name}" style="width: 200px; height: auto;">
+          `;
+          
+          // Add close button
+          const closeButton = document.createElement('button');
+          closeButton.textContent = 'Close';
+          closeButton.onclick = () => document.body.removeChild(popup);
+          popup.appendChild(closeButton);
+
+          // Append popup to body
+          document.body.appendChild(popup);
+        }    
     },
     "editor.labelSeries": {
       "fixedField": "fixed",
