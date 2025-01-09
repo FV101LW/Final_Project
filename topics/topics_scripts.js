@@ -1,6 +1,6 @@
 // Load comments from localStorage and display them when the page is loaded
 window.onload = function() {
-    loadComments();
+    loadComments1();
 }
 
 // Function to add a comment  
@@ -37,11 +37,11 @@ function addComment() {
     input.value = "";
 
     // Reload the comments
-    loadComments();
+    loadComments1();
 }
 
 // Function to load and display comments
-function loadComments() {
+function loadComments1() {
     const commentsSection = document.getElementById("commentsSection");
     commentsSection.innerHTML = "<h2>Comments</h2>"; // Reset the section
 
@@ -87,7 +87,7 @@ function deleteComment(commentId) {
     localStorage.setItem("comments", JSON.stringify(filteredComments));
 
     // Reload the comments
-    loadComments();
+    loadComments1();
 }
 
 /* For topics */
