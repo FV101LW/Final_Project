@@ -72,33 +72,6 @@
   </style>
 <body>
 	
-<script>
-// Initialize the map
-var map = L.map('chartdiv').setView([20, 0], 2); // Centered at lat: 20, lon: 0, zoom level: 2
-
-// Add a tile layer (Map background)
-L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    maxZoom: 18,
-    attribution: '© OpenStreetMap contributors'
-}).addTo(map);
-
-// Define marker data with associated information
-var markers = [
-    { lat: 26.36181, lon: -85.60633, info: "Kemp's Ridley Sea Turtle - Found in the Gulf of Mexico, endangered species." },
-    { lat: 45.25508, lon: -51.35656, info: "North Atlantic Right Whale - Critically endangered whale species." },
-    { lat: 35.30984, lon: 26.85859, info: "Mediterranean Monk Seal - Native to the Mediterranean Sea, endangered." },
-    { lat: 20.0209, lon: -59.07001, info: "Hawksbill Turtle - Tropical regions, critically endangered." },
-    // Add more marker details as needed
-];
-
-// Add markers to the map with popups
-markers.forEach(function(marker) {
-    L.marker([marker.lat, marker.lon])
-        .addTo(map)
-        .bindPopup(marker.info); // Binds popup with information
-});
-</script>
-
 <div class="topnav">
 
   <!-- Centered link -->
