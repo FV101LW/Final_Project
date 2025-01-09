@@ -21,7 +21,6 @@
 
         .topnav {
             background-color: #003366;
-            overflow: hidden;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -47,6 +46,10 @@
         .topnav a.active {
             background-color: #005580;
             color: white;
+        }
+
+        .topnav-left {
+            display: flex;
         }
 
         .topnav-right {
@@ -105,6 +108,11 @@
         }
 
         @media screen and (max-width: 600px) {
+            .topnav {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
             .topnav a {
                 display: block;
                 text-align: left;
@@ -119,14 +127,20 @@
 </head>
 <body>
 
- <div class="topnav">
-    <a href="About.html">About Us</a>
-    <a href="ApplicationPage.html">Contact</a>
-    <div class="topnav-right">
-      <a href="InteractiveMap.html">Interactive Map</a>
-      <a href="DATABANK.html">Databank</a>
+<div class="topnav">
+    <!-- Left-aligned links -->
+    <div class="topnav-left">
+        <a href="https://fv101lw.github.io/Final_Project/" class="active">Home</a>
+        <a href="page2.html">About Us</a>
+        <a href="page3.html">Contact</a>
     </div>
-  </div>
+  
+    <!-- Right-aligned links -->
+    <div class="topnav-right">
+        <a href="page4.html">Interactive Map</a>
+        <a href="page5.html">Databank</a>
+    </div>
+</div>
 
 <h1>Hall of Endangered Species</h1>
 
@@ -142,4 +156,17 @@
 
     <div class="species-card">
         <img src="https://upload.wikimedia.org/wikipedia/commons/e/e6/Aplysina_fistularis_%28Yellow_tube_sponge%29.jpg" alt="Yellow Tube Sponge">
-        <p><strong>Yellow Tube Sponge</strong></
+        <p><strong>Yellow Tube Sponge</strong></p>
+        <p><em>Binomial Name:</em> Aplysina fistularis</p>
+        <p><em>Total Population:</em> Unknown</p>
+        <p><em>Status:</em> Least Concern</p>
+        <p><em>Threats:</em> Habitat changes, water pollution</p>
+    </div>
+</div>
+
+<footer>
+    © 2025 Neptune's Sentinels | Protecting Marine Biodiversity
+</footer>
+
+</body>
+</html>
