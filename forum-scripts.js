@@ -2,7 +2,7 @@
 window.onload = function() {
     loadComments();
 }
- 
+
 // Function to add a comment
 function addComment() {
     const input = document.getElementById("commentInput");
@@ -15,6 +15,11 @@ function addComment() {
 
     const commentId = new Date().getTime(); // Unique ID for each comment based on timestamp
     const userId = prompt("Please enter your name to identify your comments (it will be used for deleting your comment).");
+
+    if (!userId) {
+        alert("Name is required to post a comment.");
+        return;
+    }
 
     // Store the comment data
     const commentData = {
@@ -53,7 +58,9 @@ function loadComments() {
 
         // Only allow the commenter to delete their own comment
         deleteButton.onclick = function () {
-            if (comment.userId === prompt("Enter your name to delete the comment:")) {
+            const currentUser = prompt("Enter your name to delete the comment:");
+
+            if (currentUser === comment.userId) {
                 deleteComment(comment.id);
             } else {
                 alert("You can only delete your own comments.");
