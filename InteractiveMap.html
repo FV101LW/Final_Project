@@ -21,6 +21,32 @@
       text-align: center;
     }
 
+    .home-button {
+            position: fixed;
+            bottom: 60px; /* Adjusted to appear above the footer */
+            left: 20px;
+            background-color: #04AA6D; /* Green button */
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            font-size: 16px;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .home-button:hover {
+            background-color: #028a5b;
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
+        }
+
+	.home-button {
+                bottom: 80px; /* Adjusted for mobile layout */
+                left: 10px;
+                font-size: 14px;
+                padding: 8px 16px;
+        }
+
     .topnav a {
   float: left;
   color: #f2f2f2;
@@ -886,5 +912,7 @@ am5viewer.getChart("chartdiv").then(chart => {
 
 </script>
 
+      <a href="https://fv101lw.github.io/Final_Project/" class="home-button">Home</a>
+	
 </body>
 </html>
