@@ -133,8 +133,13 @@ am5viewer.create("chartdiv", {
     },
 	  
     "editor.map": {
+	    "homeZoomLevel": 1, // Set a default zoom level
+      "homeGeoPoint": {
+      "latitude": 0,
+      "longitude": 0
+      },
       "minZoomLevel": 0.8,
-      "maxZoomLevel": 5,
+      "maxZoomLevel": 1,
       "projection": "geoOrthographic",
       "panX": "rotateX",
       "zoomControl": {
