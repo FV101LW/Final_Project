@@ -133,6 +133,11 @@ am5viewer.create("chartdiv", {
     },
 	  
     "editor.map": {
+      "homeZoomLevel": 1
+	      "homeGeoPoint": { // Centers on the equator by default
+    "latitude": 0,
+    "longitude": 0
+  },
       "minZoomLevel": 0.8,
       "projection": "geoOrthographic",
       "panX": "rotateX",
