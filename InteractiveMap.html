@@ -79,12 +79,18 @@
 
 /* Responsive navigation menu (for mobile devices) */
 @media screen and (max-width: 600px) {
-  .topnav a {
+  .topnav a, .topnav-right {
     float: none;
     display: block;
   }
   
-  
+  .topnav-centered a {
+    position: relative;
+    top: 10;
+    left: 0;
+    transform: none;
+  }
+}
       #chartdiv {
 	width: 100vw;
 	height: 100vh;
@@ -93,7 +99,12 @@
 <body>
 	
 <div class="topnav">
-    
+
+  <!-- Centered link -->
+  <div class="topnav-centered">
+    <a href="https://fv101lw.github.io/Final_Project/" class="active">Home</a>
+  </div>
+  
   <!-- Left-aligned links (default) -->
   <a href="About.html">About Us</a>
   <a href="ApplicationPage.html">Contact</a>
